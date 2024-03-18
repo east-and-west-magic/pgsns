@@ -26,4 +26,4 @@ COPY . .
 EXPOSE 7860
 
 # start server  
-CMD python pgsns/manage.py migrate && python pgsns/manage.py runserver 0.0.0.0:7860
+CMD python pgsns/manage.py runserver 0.0.0.0:7860
