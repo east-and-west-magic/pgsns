@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .login {
+    background: rgb(213, 227, 233);
+    width: 20em;
+    border-radius: 5px;
+  }
+
+  .login #header {
+    text-align: center;
+    background-color: rgb(2, 75, 110);
+    padding: 20px 0;
+    margin-top: 0;
+    color: aliceblue;
+    border-radius: 5px 5px 0 0;
+
+  }
+
+  .form-row {
+    margin: 2px 0;
+    padding: 2px 35px;
+    vertical-align: middle;
+  }
+
+  .login #id_email,
+  .login #id_password {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: gray solid 1px;
+  }
+
+  .submit-row {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+  }
+
+  .login #id_submit {
+    padding: 10px 15px 10px 15px;
+    color: whitesmoke;
+    background-color: rgb(38, 170, 227);
+    font-size: large;
+    border-radius: 5px;
+    border: hidden;
+  }
+  .errortip{
+    color: red;
+    font-size: small;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }

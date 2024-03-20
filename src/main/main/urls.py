@@ -21,4 +21,5 @@ admin.autodiscover()
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("helloworld.urls",namespace="helloworld")),
+    path('user/',include("user.urls",namespace="user")),
 ]

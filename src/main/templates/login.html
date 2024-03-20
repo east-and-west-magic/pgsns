@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>PgSNS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+</head>
+
+<body>
+  <div class="login">
+    <h1 id="header">Login</h1>
+    <form action="/user/login_verify/" method="post" id="login-form"><input type="hidden">
+      {% csrf_token %}
+      <div class="form-row">
+        <label for="id_email" class="required">Email:</label>
+        <input type="text" name="email" autofocus="" value="{{ email|default:'' }}" autocapitalize="none" autocomplete="email" maxlength="150"
+          required="" id="id_email">
+      </div>
+      <div class="form-row">
+        <label for="id_password" class="required">Password:</label>
+        <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+      </div>
+      <div class="form-row">
+        <label for="id_password" class="required">Password Confirm:</label>
+        <input type="password" name="password_confirm" autocomplete="current-password" required="" id="id_password">
+      </div>
+      <div hidden> {{ error|default:'false' }}</div>
+      {% if error == "true" %}
+      <div class="errortip">
+        <p>{{ message|default:'nothing' }}</p>
+      </div>
+      {% endif %}
+      <div class="submit-row">
+        <input type="submit" id="id_submit" value="Log in">
+      </div>
+    </form>
+
+  </div>
+</body>
+
+</html>
