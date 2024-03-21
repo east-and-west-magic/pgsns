@@ -13,22 +13,23 @@ def login(request):
         "message": message,
         "email": email,
     }
-    return render(request, 'login.html', context)
+    return render(request, "login.html", context)
 
 
 def login_verify(request):
     context = {}
-    email = request.POST.get('email').strip().lower()
-    password = request.POST.get('password')
-    password_confirm = request.POST.get('password_confirm')
+    email = request.POST.get("email").strip().lower()
+    password = request.POST.get("password")
+    password_confirm = request.POST.get("password_confirm")
     if password != password_confirm:
         error = "true"
         msg = "Entered passwords do not match"
         url = f"../login?error={error}&message={msg}&email={email}"
         return redirect(url)
     
+    # TODO: verify 
     context = {
-        'email': email,
+        "email": email,
     }
 
-    return render(request, 'loggedin.html', context)
+    return render(request, "loggedin.html", context)
