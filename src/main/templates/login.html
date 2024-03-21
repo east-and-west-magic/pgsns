@@ -12,25 +12,24 @@
 <body>
   <div class="login">
     <h1 id="header">Login</h1>
-    <form action="/user/login_verify/" method="post" id="login-form"><input type="hidden">
+    <form action="/user/login_verify/" method="post" id="login-form">
       {% csrf_token %}
       <div class="form-row">
         <label for="id_email" class="required">Email:</label>
-        <input type="text" name="email" autofocus="" value="{{ email|default:'' }}" autocapitalize="none" autocomplete="email" maxlength="150"
-          required="" id="id_email">
+        <input type="email" name="email" value="{{ email|default:'' }}"  maxlength="150" id="id_email" required/>
       </div>
       <div class="form-row">
         <label for="id_password" class="required">Password:</label>
-        <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+        <input type="password" name="password" id="id_password" required/>
       </div>
       <div class="form-row">
-        <label for="id_password" class="required">Password Confirm:</label>
-        <input type="password" name="password_confirm" autocomplete="current-password" required="" id="id_password">
+        <label for="id_password_confirm" class="required">Password Confirm:</label>
+        <input type="password" name="password_confirm" id="id_password_confirm" required/>
       </div>
       <div hidden> {{ error|default:'false' }}</div>
       {% if error == "true" %}
       <div class="errortip">
-        <p>{{ message|default:'nothing' }}</p>
+        <p>{{ message|default:'' }}</p>
       </div>
       {% endif %}
       <div class="submit-row">
