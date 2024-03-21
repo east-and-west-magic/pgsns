@@ -52,6 +52,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://pgsoft-pgsns.hf.space',
+]
+
 ROOT_URLCONF = 'main.urls'
 
 TEMPLATES = [
