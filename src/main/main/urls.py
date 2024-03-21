@@ -21,6 +21,6 @@ from src.main.main import views
 admin.autodiscover()
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name="home")
+    path('', views.home, name="home"),
     path('user/',include("user.urls",namespace="user")),
 ]
