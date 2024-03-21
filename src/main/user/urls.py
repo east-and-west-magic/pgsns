@@ -17,9 +17,8 @@ Including another URLconf
 from django.urls import path
 from . import views
 
-
 app_name = 'user'
 urlpatterns = [
-    path('login/', views.login),
+    path('login/', views.login, name="login"),
     path('login_verify/', views.login_verify),
 ]
