@@ -51,7 +51,7 @@ def login(request) -> HttpResponse:
     return render(request, "login.html", context)
 
 
-def login_verify(request) -> HttpResponse | HttpResponseRedirect:
+def verify_password(request) -> HttpResponse | HttpResponseRedirect:
     """verify user's email and password"""
     context = {}
     email = request.POST.get("email").strip().lower()
