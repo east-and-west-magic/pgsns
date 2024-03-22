@@ -22,10 +22,6 @@
         <label for="id_password" class="required">Password:</label>
         <input type="password" name="password" id="id_password" required/>
       </div>
-      <div class="form-row">
-        <label for="id_password_confirm" class="required">Password Confirm:</label>
-        <input type="password" name="password_confirm" id="id_password_confirm" required/>
-      </div>
       <div hidden> {{ error|default:'false' }}</div>
       {% if error == "true" %}
       <div class="errortip">
