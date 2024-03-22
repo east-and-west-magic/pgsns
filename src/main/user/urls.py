@@ -20,5 +20,5 @@ from . import views
 app_name = 'user'
 urlpatterns = [
     path('login/', views.login, name="login"),
-    path('login_verify/', views.login_verify),
+    path('verify_password/', views.verify_password),
 ]
