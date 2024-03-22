@@ -1,5 +1,5 @@
 import os
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 import requests
 from . import status
@@ -16,7 +16,7 @@ header = {
 }
 
 
-def post_to_pguser(url: str,obj: dict=None) -> dict:
+def post_to_pguser(url: str, obj: dict = None) -> dict:
     """post to pguser
 
     Args:
@@ -51,14 +51,14 @@ def login(request) -> HttpResponse:
     return render(request, "login.html", context)
 
 
-def login_verify(request):
+def verify_password(request) -> HttpResponse | HttpResponseRedirect:
     """verify user's email and password"""
     context = {}
     email = request.POST.get("email").strip().lower()
     password = request.POST.get("password")
     url = f"{url_login}?email={email}&password={password}"
     res = post_to_pguser(url)
-    stat=res.get("status",status.FAILURE)
+    stat = res.get("status", status.FAILURE)
     if stat == status.FAILURE:
         error = "true"
         msg = "Invalid email or password"
