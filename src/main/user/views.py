@@ -16,7 +16,7 @@ header = {
 }
 
 
-def post_to_pguser(url: str,obj: dict=None) -> dict:
+def post_to_pguser(url: str, obj: dict = None) -> dict:
     """post to pguser
 
     Args:
@@ -58,7 +58,7 @@ def login_verify(request) -> HttpResponse | HttpResponseRedirect:
     password = request.POST.get("password")
     url = f"{url_login}?email={email}&password={password}"
     res = post_to_pguser(url)
-    stat=res.get("status",status.FAILURE)
+    stat = res.get("status", status.FAILURE)
     if stat == status.FAILURE:
         error = "true"
         msg = "Invalid email or password"
