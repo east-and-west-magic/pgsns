@@ -1,5 +1,5 @@
 import os
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 import requests
 from . import status
@@ -51,7 +51,7 @@ def login(request) -> HttpResponse:
     return render(request, "login.html", context)
 
 
-def login_verify(request):
+def login_verify(request) -> HttpResponse | HttpResponseRedirect:
     """verify user's email and password"""
     context = {}
     email = request.POST.get("email").strip().lower()
