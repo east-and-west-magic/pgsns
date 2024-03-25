@@ -1,9 +1,9 @@
 import os
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
+from .forms import RegisterForm
 import requests
 from . import status
-
 # Create your views here.
 
 base_url = "https://pgsoft-pguser.hf.space"
@@ -68,3 +68,16 @@ def verify_password(request) -> HttpResponse | HttpResponseRedirect:
         "email": email,
     }
     return render(request, "loggedin.html", context)
+
+
+def register(request):
+    if request.method == "POST":
+        print("posting")
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # upload to dataset
+            return redirect("/")
+    else:
+        form = RegisterForm()
+    return render(request, "register.html", {"form": form})
