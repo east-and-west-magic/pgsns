@@ -1,5 +1,5 @@
 """
-URL configuration for main project.
+URL configuration for pgsns project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -15,12 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from . import views
+from django.urls import path
 
-admin.autodiscover()
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name="home"),
-    path('user/',include("user.urls",namespace="user")),
 ]

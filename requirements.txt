@@ -1,4 +1,2 @@
 django
 requests
-django-crispy-forms
-crispy-bootstrap5
