@@ -22,7 +22,7 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY . .
 
-RUN pwd && ls -l && ls -l /code/src
+RUN pwd && ls -l && ls -l src
 # RUN rm /code/src/db.sqlite3
 COPY --chmod=777 ./src/db.sqlite3 /code/src/db.sqlite3
 
