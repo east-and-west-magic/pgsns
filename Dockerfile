@@ -26,4 +26,4 @@ COPY . .
 EXPOSE 7860
 
 # start server  
-CMD python src/main/manage.py runserver 0.0.0.0:7860
+CMD python src/manage.py runserver 0.0.0.0:7860
