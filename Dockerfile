@@ -25,5 +25,7 @@ COPY . .
 # port where the Django app runs  
 EXPOSE 7860
 
+RUN chmod 777 src/db.sqlite3
+
 # start server  
 CMD python src/manage.py runserver 0.0.0.0:7860
