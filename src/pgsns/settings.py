@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vm2hnku(!sw8^v!^isb)=(+4cqoph5z)c8r=n#oy2&&ekorp_!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pgsoft-pgsns.hf.space']
+ALLOWED_HOSTS = ['pgsoft-pgsns.hf.space', '127.0.0.1']
 
 
 # Application definition
@@ -85,6 +85,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'pgsns.wsgi.application'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://pgsoft-pgsns.hf.space',
+]
 
 
 # Database

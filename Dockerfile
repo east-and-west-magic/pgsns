@@ -22,6 +22,11 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY . .
 
+USER root
+RUN chmod 777 src
+RUN chmod 777 src/db.sqlite3
+USER user
+
 # port where the Django app runs  
 EXPOSE 7860
 
