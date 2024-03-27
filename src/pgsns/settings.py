@@ -86,6 +86,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pgsns.wsgi.application'
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://pgsoft-pgsns.hf.space',
+]
+
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
