@@ -22,7 +22,8 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY . .
 
-RUN rm /code/src/db.sqlite3
+RUN pwd && ls -l && ls -l /code/src
+# RUN rm /code/src/db.sqlite3
 COPY --chmod=777 ./src/db.sqlite3 /code/src/db.sqlite3
 
 # port where the Django app runs  
