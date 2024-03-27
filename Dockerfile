@@ -24,12 +24,11 @@ COPY . .
 
 RUN pwd && ls -l && ls -l src
 # RUN rm /code/src/db.sqlite3
-COPY --chmod=777 ./src/db.sqlite3 /code/src/db.sqlite3
+COPY --chmod=777 src/db.sqlite3 src/db.sqlite3
 
 # port where the Django app runs  
 EXPOSE 7860
 
-RUN ls -l /code/src/db.sqlite3
 RUN ls -l src/db.sqlite3
 
 # start server  
